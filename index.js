@@ -187,4 +187,21 @@ div.removeChild(div.firstChild)
   
 }
 
+function updateUserFunc(){
+  var readIdTextBox = document.getElementById('searchID2').value
+  for(i=0;i<objArray.length;i++){
+    if(readIdTextBox==objArray[i].id){
+      var readFillNewInfo = document.getElementById('changeValue').value
+      if(document.getElementById('addressID').checked==true){
+        objArray[i].address = readFillNewInfo
+      }else{
+        objArray[i].phone = readFillNewInfo
+      }
+    }
+  }
+  displayContact()//refresh the page and display
+  document.getElementById('searchID2').value = " "
+  document.getElementById('changeValue').value = " "
+}
+
 
